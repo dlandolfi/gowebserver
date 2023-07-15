@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="GitLab Pages" />
+
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Dano The Bard - Encryption!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Encryption!</h1>
+    <p>
+      For whatever reason, the names Alice and Bob are used a lot when
+      explaining encryption, so I&#39;m going to carry on that tradition.
+    </p>
+    <p>
+      Say Alice wants to mail a letter to Bob, but she doesn&#39;t want anyone
+      to be able to read it at any point during its transit. What she can do is
+      encrypt the message with a cipher. The first known cipher is known as the
+      Caesar cipher, named after Julius Caesar. This involves shifting the
+      alphabet by a certain number. For this to work, both the sender and the
+      recipient need to share that number to encrypt and decrypt the message.
+      This number is known as an encryption key.
+    </p>
+    <p>
+      Let&#39;s imagine the key is &quot;5&quot; and we&#39;re shifting 5 spaces
+      forward in the alphabet. Then A&#39;s become F&#39;s, B&#39;s become
+      G&#39;s, C&#39;s become H&#39;s, and so on. So the message
+      <code>"Hello Bob"</code> becomes <code>"Mjqqt Gtg"</code>. Now, anyone
+      intercepting this message will be reading some encrypted nonsense. And for
+      Bob, all he has to do is shift by 5 in the opposite direction to decrypt
+      the message and be able to read it. This is a lot like how the messaging
+      app Signal works. If you click on a contact and tap Verify Safety Number,
+      you&#39;ll see the key that is used to encrypt/decrypt messages between
+      you and that person. Every one of your contacts will have a different key.
+    </p>
+    <p>
+      In a similar way this works with websites, where the browser on your
+      device and a web server are the sender and receiver. In a very broad
+      sense, when you visit a secure website, that server sends you the key and
+      <em>then</em> it sends you the contents of the website in encrypted form
+      for your browser to decrypt once it arrives on your device. Since you both
+      have the key you can send encrypted info back and forth. This is mostly
+      important when sensitive information is being transferred so nothing can
+      be revealed during transit. It isn&#39;t at all necessary for this site,
+      but I wanted to know how to implement it anyway.
+    </p>
+    <p>
+      This is a pretty vague description but I think it paints pretty good
+      picture of what&#39;s happening. And this is also not perfectly secure. No
+      encryption is perfectly secure. If you&#39;d like to know more about this
+      kind of thing I highly recommend The Code Book by Simon Singh. It is an
+      easy to digest read that is really fun! :D
+    </p>
+  </body>
+</html>
