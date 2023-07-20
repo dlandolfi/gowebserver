@@ -19,4 +19,4 @@ jobs:
         run: |
           go version
           ssh -V
-          rsync -v
+          rsync -V
