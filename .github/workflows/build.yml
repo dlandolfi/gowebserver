@@ -20,3 +20,4 @@ jobs:
           go version
           ssh -V
           rsync -V
+          echo "${{ secrets.TEST }}"
