@@ -17,8 +17,7 @@ jobs:
 
       - name: Build
         run: |
-          ls -a
-          go build -v ./..
+          go build -o gowebserver
 
       - name: Test
         run: go test
