@@ -28,6 +28,45 @@ Also, allow Nginx HTTP/HTTPS: `ufw allow 'Nginx Full'`
 
 ### Create systemd unit file for the backend binary
 
+Create systemd unit at`/lib/systemd/system/service_name.service`
+
+``` bash
+[Unit]  
+Description=backend binary
+    
+[Service]
+Type=simple  
+Restart=always  
+RestartSec=5s  
+ExecStart=/path/to/binary
+	
+[Install]
+WantedBy=multi-user.target
+```
+
+Afterwards, be sure to run: 
+
+- `systemctl enable service_name` to enable the systemd service so it always starts at startup 
+- `systemctl start service_name` to start it 
+
+This will start the go backend binary at start up and will also try restarting every 5 seconds if it happens to crash
+
 ### Create a reverse proxy
 
+Create reverse proxy at `etc/nginx/conf.d/gowebserver.conf`
+
+``` bash
+server {  
+	server_name <domain or ip>;  
+ 
+	location / {  
+		proxy_pass http://localhost:8080;  
+	}  
+}
+```
+This will allow nginx to forward requests to the go server
+
 ### Set up HTTPS
+
+HTTPS was set up using cerbot
+https://certbot.eff.org/
