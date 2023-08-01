@@ -30,7 +30,7 @@ Also, allow Nginx HTTP/HTTPS: `ufw allow 'Nginx Full'`
 
 Create systemd unit at`/lib/systemd/system/service_name.service`
 
-``` bash
+```
 [Unit]  
 Description=backend binary
     
@@ -55,13 +55,13 @@ This will start the go backend binary at start up and will also try restarting e
 
 Create reverse proxy at `etc/nginx/conf.d/gowebserver.conf`
 
-``` bash
+``` 
 server {  
-	server_name <domain or ip>;  
+  server_name <domain or ip>;  
  
-	location / {  
-		proxy_pass http://localhost:8080;  
-	}  
+  location / {  
+    proxy_pass http://localhost:8080;  
+  }  
 }
 ```
 This will allow nginx to forward requests to the go server
